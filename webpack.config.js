@@ -79,8 +79,8 @@ module.exports = {
       chunkFilename: process.env.NODE_ENV !== 'production' ? 'styles/[id].css' : 'styles/[id].[hash].css',
     }),
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'src/main/index.html',
+      filename: 'main.html',
+      template: 'src/main/main.html',
       chunks: ['runtime', 'main'],
     }),
   ],
@@ -93,5 +93,6 @@ module.exports = {
 
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
+    index: 'main.html',
   },
 };
