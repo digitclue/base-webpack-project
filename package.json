@@ -25,6 +25,7 @@
     "npm": "^6.0.0"
   },
   "devDependencies": {
+    "autoprefixer": "^8.4.1",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
@@ -38,6 +39,7 @@
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.8.3",
+    "postcss-loader": "^2.1.5",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
@@ -59,6 +61,11 @@
         }
       ]
     ]
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
   },
   "browserslist": [
     "defaults"
