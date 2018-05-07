@@ -1,12 +1,12 @@
 # Base webpack project
 Boilerplate for web project based on webpack 4
 
-## Contains 
+## Contains
 * Babel (preset-env)
 * Sass/scss/css
-* eslint
+* postcss (autoprefixer)
+* eslint (airbnb-base)
+* stylelint (stylelint-config-recommended-scss)
 
 ## TODO
-* stylelint
-* postcss
 * handle entrypoints

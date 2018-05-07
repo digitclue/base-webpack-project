@@ -4,9 +4,13 @@
   "description": "Base webpack project",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf dist/**/* && npm run lint && cross-env NODE_ENV=production webpack",
     "start": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "lint": "eslint ./src --fix"
+    "build": "cross-env NODE_ENV=production webpack",
+    "prebuild": "concurrently --names \"clean,lint\" -c \"red,green\" \"npm run clean\" \"npm run lint\"",
+    "clean": "rimraf dist/**/*",
+    "lint": "concurrently --names \"stylelint,eslint\" -c \"red,cyan\" \"npm run stylelint\" \"npm run eslint\"",
+    "eslint": "eslint ./src --fix",
+    "stylelint": "stylelint ./src/**/**.scss ./src/**/**.css --fix"
   },
   "repository": {
     "type": "git",
@@ -21,14 +25,14 @@
     "url": "https://github.com/digitclue/base-webpack-project/issues"
   },
   "dependencies": {
-    "core-js": "^2.5.5",
-    "npm": "^6.0.0"
+    "core-js": "^2.5.5"
   },
   "devDependencies": {
     "autoprefixer": "^8.4.1",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
+    "concurrently": "^3.5.1",
     "cross-env": "^5.1.4",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
@@ -43,6 +47,9 @@
     "rimraf": "^2.6.2",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
+    "stylelint": "^9.2.0",
+    "stylelint-config-recommended-scss": "^3.2.0",
+    "stylelint-scss": "^3.1.0",
     "webpack": "^4.6.0",
     "webpack-cli": "^2.0.15",
     "webpack-dev-server": "^3.1.3"
