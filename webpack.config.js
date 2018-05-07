@@ -95,7 +95,6 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: process.env.NODE_ENV !== 'production' ? 'styles/[name].css' : 'styles/[name].[hash].css',
-      chunkFilename: process.env.NODE_ENV !== 'production' ? 'styles/[id].css' : 'styles/[id].[hash].css',
     }),
     new HtmlWebpackPlugin({
       filename: 'main.html',
