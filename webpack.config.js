@@ -27,6 +27,7 @@ module.exports = {
       rules.sass,
       rules.images,
       rules.fonts,
+      rules.pug,
     ],
   },
 
@@ -36,7 +37,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: 'main.html',
-      template: 'src/main/main.html',
+      template: 'src/main/main.pug',
       chunks: ['runtime', 'polyfills', 'main'],
     }),
   ],

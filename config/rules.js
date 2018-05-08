@@ -74,4 +74,13 @@ module.exports = {
       },
     ],
   },
+  pug: {
+    test: /\.(pug|jade)$/,
+    use: {
+      loader: 'pug-loader',
+      query: {
+        pretty: true,
+      },
+    },
+  },
 };
