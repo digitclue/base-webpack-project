@@ -13,7 +13,6 @@ module.exports = {
       {
         loader: 'css-loader',
         options: {
-          importLoaders: 1,
           sourceMap: true,
         },
       },
@@ -32,12 +31,17 @@ module.exports = {
       {
         loader: 'css-loader',
         options: {
-          importLoaders: 2,
           sourceMap: true,
         },
       },
       {
         loader: 'postcss-loader',
+        options: {
+          sourceMap: true,
+        },
+      },
+      {
+        loader: 'resolve-url-loader',
         options: {
           sourceMap: true,
         },

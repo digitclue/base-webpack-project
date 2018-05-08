@@ -33,7 +33,7 @@ module.exports = {
 
   plugins: [
     new MiniCssExtractPlugin({
-      filename: process.env.NODE_ENV !== 'production' ? 'styles/[name].css' : 'styles/[name].[hash].css',
+      filename: process.env.NODE_ENV !== 'production' ? 'styles/[name].css' : 'styles/[name].[chunkhash].css',
     }),
     new HtmlWebpackPlugin({
       filename: 'main.html',
