@@ -8,6 +8,7 @@ module.exports = {
   mode: process.env.NODE_ENV || 'development',
 
   entry: {
+    polyfills: './src/polyfills.js',
     main: [
       './src/main/main.js',
       './src/main/main.scss',
@@ -36,7 +37,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'main.html',
       template: 'src/main/main.html',
-      chunks: ['runtime', 'main'],
+      chunks: ['runtime', 'polyfills', 'main'],
     }),
   ],
 
